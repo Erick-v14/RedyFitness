@@ -1,11 +1,23 @@
-﻿@{
+﻿@model RedyFitness.Dto.Login
+@{
     ViewBag.Title = "Home Page";
 }  
 
     <center>            
-  <img src="~/Content/RedyFitnessLogo.png"   width="600"  height="400" />
-     </center>
-
+  <img src="~/Content/RedyFitnessLogoHomePage.jpg"   width="500"  height="300" />
+     
+<h2>User Name</h2>
+<div class=" form-group-sm">
+    @Html.TextBoxFor(x=> x.userName, new { @class="form-control"})
+</div><br />
+<h2>Password</h2>
+<div class="form-group-sm">
+    @Html.TextBoxFor(x=> x.userPassword,new { @class="form-control"})<br />
+</div>
+        <div class="text-center">
+            <input class="btn btn-primary"type="submit"value="Login"/>
+        </div>
+    </center>
 
   
  
