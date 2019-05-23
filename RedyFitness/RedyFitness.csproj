@@ -124,6 +124,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EntriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Dto\AccountCreation.cs" />
     <Compile Include="Dto\Entry.cs" />
     <Compile Include="Dto\Login.cs" />
     <Compile Include="Global.asax.cs">
@@ -204,12 +205,14 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Home\CreateAccount.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Entries\" />
     <Folder Include="Views\NewFolder1\" />
+    <Folder Include="Views\NewUser\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
