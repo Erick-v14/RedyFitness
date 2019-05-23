@@ -22,7 +22,7 @@ namespace RedyFitness.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Erick Valle";
 
             return View();
         }
