@@ -7,15 +7,6 @@ namespace RedyFitness.Dto
 {
     public class Entry
     {
-
-        public string[] Workouts = new string[]
-        {
-            "Bench Press",
-            "Squat",
-            "Shoulder Press",
-            "Deadlift"
-        };
-
         //add entry class
         public int id { get; set; }
       
@@ -29,7 +20,6 @@ namespace RedyFitness.Dto
         public double numOfWeight { get; set; }
 
         public string notes { get; set; }
-        
 
         public Entry ToModel()
         {
@@ -43,6 +33,7 @@ namespace RedyFitness.Dto
                 notes = notes
             };
         }
+
+
     }
-   
 }

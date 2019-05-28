@@ -5,7 +5,6 @@ using System.Web;
 
 namespace RedyFitness.Dto
 {
-    
     public class AccountCreation
     {
         public string UserName { get; set; }
