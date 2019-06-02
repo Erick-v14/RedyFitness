@@ -9,7 +9,7 @@ namespace RedyFitness.Models
     public class User :ApplicationUser
     {
         public string LoginName { get; set; }
-        
+
         public string Password { get; set; }
 
         public string FirstName { get; set; }
@@ -18,7 +18,7 @@ namespace RedyFitness.Models
 
         public DateTime DateofBirth { get; set; }
 
-        public char Gender { get; set; }
+        
 
         public int Weight { get; set; }
     }
@@ -45,9 +45,6 @@ namespace RedyFitness.Models
         [Required]
         [DataType(DataType.Date)]
         public DateTime DateofBirth { get; set; }
-
-        [Required]
-        public char Gender { get; set; }
 
         [Required]
         public int Weight { get; set; }
