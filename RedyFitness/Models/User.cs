@@ -55,7 +55,7 @@ namespace RedyFitness.Models
         public string LastName { get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
+        [DataType(DataType.Date,ErrorMessage="Please enter a valid date")]
         [Display(Name ="Date of Birth")]
         public DateTime DateofBirth { get; set; }
 
@@ -64,9 +64,9 @@ namespace RedyFitness.Models
     }
         public class LoginModel
     {
-        [DataType(DataType.EmailAddress,ErrorMessage ="Please enter a valid email")]
-        [Required(ErrorMessage ="Please enter your email")]
-        public string Email { get; set; }
+        
+        [Required(ErrorMessage ="Please enter your User Nae")]
+        public string UserName { get; set; }
 
         [DataType(DataType.Password)]
         [Required(ErrorMessage ="Please enter your Password")]

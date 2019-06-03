@@ -88,7 +88,7 @@ namespace RedyFitness.Controllers
         {
             if (ModelState.IsValid)
             {
-                ApplicationUser user = await UserManager.FindByEmailAsync(model.Email);
+                ApplicationUser user = await UserManager.FindByNameAsync(model.UserName);
                 if (user!=null)
                 {
                     ApplicationUser c = await UserManager.FindAsync(user.UserName,model.Password);
@@ -111,7 +111,7 @@ namespace RedyFitness.Controllers
                 }
                 else
                 {
-                    ViewBag.msg = "There is no user registered with this email";
+                    ViewBag.msg = "This User Name is not registered";
                     return View();
                 }
             }
