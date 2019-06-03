@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 using RedyFitness.Data;
 using RedyFitness.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -54,7 +56,7 @@ namespace RedyFitness.Controllers
 
 
                     ViewBag.message = "Your account has been created!";
-                    return View();
+                    return RedirectToAction("Login", "Users");
                 }
                 
                 else
@@ -92,6 +94,13 @@ namespace RedyFitness.Controllers
                     ApplicationUser c = await UserManager.FindAsync(user.UserName,model.Password);
                     if(c !=null)
                     {
+                        ClaimsIdentity ident = await UserManager.CreateIdentityAsync(c, DefaultAuthenticationTypes.ApplicationCookie);
+                        AuthManager.SignOut();
+                        AuthManager.SignIn(new AuthenticationProperties
+                        {
+                            IsPersistent = false
+                        }, ident);
+
                         return RedirectToAction("Home","Home");
                     }
                     else
@@ -109,6 +118,20 @@ namespace RedyFitness.Controllers
             else
             {
                 return View(model);
+            }
+        }
+
+        public ActionResult Logout()
+        {
+            return View();
+        }
+
+
+        private IAuthenticationManager AuthManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Authentication;
             }
         }
       
