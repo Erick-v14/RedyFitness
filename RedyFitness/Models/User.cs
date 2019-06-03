@@ -28,6 +28,7 @@ namespace RedyFitness.Models
     {
         [Required]
         [Display(Name ="User Name")]
+         
         public string LoginName { get; set; }
 
         [Required]
@@ -35,6 +36,7 @@ namespace RedyFitness.Models
         [StringLength(100, ErrorMessage ="The {0} must be at least {2} characters long.",MinimumLength =6)]
         public string Password { get; set; }
 
+        [Required]
         [DataType(DataType.Password)]
         [Display(Name ="Confirm Password")]
         [Compare ("Password", ErrorMessage ="Passwords do not match")]
@@ -42,7 +44,6 @@ namespace RedyFitness.Models
 
         [Required]
         [DataType(DataType.EmailAddress,ErrorMessage ="Please enter a valid email")]
-        
         public string Email { get; set; }
 
         [Required]
@@ -60,5 +61,15 @@ namespace RedyFitness.Models
 
         [Required]
         public int Weight { get; set; }
+    }
+        public class LoginModel
+    {
+        [DataType(DataType.EmailAddress,ErrorMessage ="Please enter a valid email")]
+        [Required(ErrorMessage ="Please enter your email")]
+        public string Email { get; set; }
+
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage ="Please enter your Password")]
+        public string Password { get; set; }
     }
 }

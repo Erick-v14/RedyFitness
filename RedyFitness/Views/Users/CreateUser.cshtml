@@ -4,18 +4,20 @@
     ViewBag.Title = "CreateUser";
 }
 <h2>Create New Account</h2>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-      
+
             <div class="col-md-10">
                 <h5>User Name</h5>
                 @Html.EditorFor(model => model.LoginName, new { htmlAttributes = new { @class = "form-control" } })
@@ -24,7 +26,7 @@
         </div>
 
         <div class="form-group">
-      
+
             <div class="col-md-10">
                 <h5>Password</h5>
                 @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
@@ -33,7 +35,7 @@
         </div>
 
         <div class="form-group">
-           
+
             <div class="col-md-10">
                 <h5>Confirm Passwrod</h5>
                 @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
@@ -42,7 +44,7 @@
         </div>
 
         <div class="form-group">
-     
+
             <div class="col-md-10">
                 <h5>Email</h5>
                 @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
@@ -51,7 +53,7 @@
         </div>
 
         <div class="form-group">
-       
+
             <div class="col-md-10">
                 <h5>First Name</h5>
                 @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
@@ -60,7 +62,7 @@
         </div>
 
         <div class="form-group">
-          
+
             <div class="col-md-10">
                 <h5>Last Name</h5>
                 @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
@@ -69,7 +71,7 @@
         </div>
 
         <div class="form-group">
-          
+
             <div class="col-md-10">
                 <h5>Date of Birth</h5>
                 @Html.EditorFor(model => model.DateofBirth, new { htmlAttributes = new { @class = "form-control" } })
@@ -77,20 +79,17 @@
             </div>
         </div>
 
-        <div class="form-group">
-         
-            <div class="col-md-10">
-                <h5>Weight</h5>
-                @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })
-            </div>
-        </div>
+
 
         <div class="form-group">
             <div class="col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
+
+        <h3>  @Html.Label("", (string)ViewBag.Message, new { @class = "text-success" }) </h3>
+        <h3>  @Html.Label("", (string)ViewBag.msg, new { @class = "text-danger" }) </h3>
+        <h3>  @Html.Label("", (string)ViewBag.message2, new { @class = "text-danger" }) </h3>
     </div>
 }
 
