@@ -30,29 +30,30 @@ namespace RedyFitness.Controllers
 
       
         [HttpPost]
-
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> CreateUser(CrateCustomerModel model)
         {
-            IdentityResult result = null;
+            
             if (ModelState.IsValid)
             {
-                User user = new User
+                var user = new User
                 {
                     LoginName = model.LoginName,
                     Password = model.Password,
+                    ConfirmPassword=model.ConfirmPassword,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     Email = model.Email,
-                    DateofBirth = model.DateofBirth,
-                 
+                    DateofBirth = model.DateofBirth,                
                     Weight = model.Weight
                 };
-               
-               result = await UserManager.CreateAsync(user, model.Password);
-           
-               
+                var result = await UserManager.CreateAsync(user, model.Password);
+                                       
                 if (result.Succeeded)
                 {
+                  
+                    await this.UserManager.AddToRoleAsync(user.Id, model.LoginName);
                     ViewBag.message = "Your Account has been created!";
                     return View();
                 }
@@ -62,7 +63,7 @@ namespace RedyFitness.Controllers
                     return View();
                 }
             }
-            return View();
+            return View(model);
 
     }
               [HttpPost]
