@@ -37,11 +37,12 @@ namespace RedyFitness.Models
 
         [DataType(DataType.Password)]
         [Display(Name ="Confirm Password")]
-        [Compare ("Password", ErrorMessage ="The passwords do not match")]
+        [Compare ("Password", ErrorMessage ="Passwords do not match")]
         public string ConfirmPassword { get; set; }
 
         [Required]
-        [DataType(DataType.EmailAddress)]
+        [DataType(DataType.EmailAddress,ErrorMessage ="Please enter a valid email")]
+        
         public string Email { get; set; }
 
         [Required]
