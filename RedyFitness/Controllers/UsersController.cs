@@ -101,7 +101,7 @@ namespace RedyFitness.Controllers
                             IsPersistent = false
                         }, ident);
 
-                        return RedirectToAction("Home","Home");
+                        return RedirectToAction("Index","Home");
                     }
                     else
                     {
