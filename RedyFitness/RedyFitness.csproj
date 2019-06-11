@@ -168,16 +168,12 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\UsersController.cs" />
-    <Compile Include="Controllers\EntriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Context.cs" />
     <Compile Include="Data\UserManager.cs" />
-    <Compile Include="Dto\AccountCreation.cs" />
-    <Compile Include="Dto\Entry.cs" />
-    <Compile Include="Dto\Login.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -290,7 +286,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Home\CreateAccount.cshtml" />
     <Content Include="Views\Users\CreateUser.cshtml" />
     <Content Include="Views\Users\Login.cshtml" />
     <Content Include="Views\Home\Index.cshtml">

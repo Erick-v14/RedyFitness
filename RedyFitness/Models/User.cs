@@ -65,7 +65,7 @@ namespace RedyFitness.Models
         public class LoginModel
     {
         
-        [Required(ErrorMessage ="Please enter your User Nae")]
+        [Required(ErrorMessage ="Please enter your User Name")]
         public string UserName { get; set; }
 
         [DataType(DataType.Password)]
