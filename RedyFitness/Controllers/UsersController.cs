@@ -68,13 +68,14 @@ namespace RedyFitness.Controllers
 
             return View(model);
         }
-        //Check to see if Email is unique
-        [HttpPost]
-       
+        //Check to see if Email is unique when creating account
+        //TODO: should give viewbag.message 2--doesnt let user register with  
+      [HttpPost]      
        public JsonResult doesEmailExist(string Email)
         {
             var email = System.Web.Security.Membership.GetUser(Email);
             ViewBag.message2 = "This email address is already registered";
+            
             return Json(email == null);
         }
 

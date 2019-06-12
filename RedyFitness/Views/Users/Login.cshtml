@@ -1,11 +1,7 @@
 ﻿@model RedyFitness.Models.LoginModel
-
 @{
     ViewBag.Title = "Login";
 }
-
-
-
 @using (Html.BeginForm())
 {
     <center>
@@ -17,30 +13,28 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            <h3>User Name</h3>
+    <div class="form-group">
+        <div class="col-md-3">
+            <h4>User Name</h4>
             @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
         </div>
-
-
-
-        <div class="form-group">
-            <h3>Password</h3>
+        </div>
+    <div class="form-group">
+        <div class="col-md-3">
+            <h4>Password</h4>
             @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
         </div>
-
-
-
+        </div>
         <div class="text-center">
             <input type="submit" value="Login" class="btn btn-primary" />
             <input type="submit" value="Forgot Account" class="btn btn-primary" /> <br />
-        
+
             @Html.ActionLink("Create New Account", "CreateUser")
-        <h3>  @Html.Label("", (string)ViewBag.message, new { @class = "text-success" }) </h3>
+            <h3>  @Html.Label("", (string)ViewBag.message, new { @class = "text-success" }) </h3>
         </div>
 
-    </center>
+</center>
 }
 
