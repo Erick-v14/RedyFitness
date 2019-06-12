@@ -3,6 +3,35 @@
     ViewBag.Title = "Workouts";
 }
 
-<h2>Workout</h2>
+@{
+    ViewBag.Title = "Workout";
+}
+<br />
+<h2>LOG YOUR WORKOUT  <br />  @DateTime.Now.Month/@DateTime.Now.Day/@DateTime.Now.Year</h2>
+<br /><br />
 
-User will log their workouts here
+
+<tr>
+    <td>
+
+
+        <div class="col-md-2">
+            <h5>Exercise</h5>
+        @Html.DropDownList("workouts", new List<SelectListItem>
+        {new SelectListItem{Text="Bench Press", Value="1" },
+        new SelectListItem{Text="Squat", Value="2" },
+        new SelectListItem{Text="Dead Lift",Value="3" },
+        new SelectListItem{Text="Shoulder Press",Value="4" }, })
+        
+            <br /><br />
+            <h5>Repititions</h5>
+        @Html.EditorFor(m => m.MaxReps, new { htmlAttributes = new { @class = "form-control" } })
+            <br />
+            <h5>Max Weight</h5>
+        @Html.EditorFor(m => m.MaxWeight, new { htmlAttributes = new { @class = "form-control" } })
+      <br />
+         <input type="submit" value="Go" class="btn btn-sm btn-primary" />
+         </div>
+            
+</td>
+</tr> 
