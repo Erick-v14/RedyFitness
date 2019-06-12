@@ -15,25 +15,25 @@
 
     <div class="form-group">
         <div class="col-md-3">
-            <h4>User Name</h4>
+            <h4>User Name &nbsp; <img src="~/Content/Icons/user.png" width="20"height="20"/></h4>
             @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
         </div>
         </div>
     <div class="form-group">
         <div class="col-md-3">
-            <h4>Password</h4>
+            <h4>Password  &nbsp; <img src="~/Content/Icons/password.png" width="20" height="20"/></h4>
             @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
         </div>
         </div>
-        <div class="text-center">
-            <input type="submit" value="Login" class="btn btn-primary" />
-            <input type="submit" value="Forgot Account" class="btn btn-primary" /> <br />
-
-            @Html.ActionLink("Create New Account", "CreateUser")
-            <h3>  @Html.Label("", (string)ViewBag.message, new { @class = "text-success" }) </h3>
-        </div>
+    <div class="text-center">
+        <input type="submit" value="Login" class="btn btn-primary" />
+        <input type="submit" value="Forgot Account" class="btn btn-primary" /> <br />
+       
+        @Html.ActionLink("Create New Account", "CreateUser")
+        <h3>  @Html.Label("", (string)ViewBag.message, new { @class = "text-success" }) </h3>
+    </div>
 
 </center>
 }

@@ -203,8 +203,16 @@
     <Content Include="Content\1200x630wa.png" />
     <Content Include="App_Code\glyphicons.png" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\Icons\dumbbell.png" />
+    <Content Include="Content\Icons\enter %282%29.png" />
+    <Content Include="Content\Icons\enter.png" />
+    <Content Include="Content\Icons\history.png" />
+    <Content Include="Content\Icons\password.png" />
+    <Content Include="Content\Icons\userpro2.png" />
+    <Content Include="Content\Icons\userProfile.png" />
     <Content Include="Content\RedyFitnessLogo.png" />
     <Content Include="Content\RedyFitnessLogoHomePage.jpg" />
+    <Content Include="Content\Icons\user.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
