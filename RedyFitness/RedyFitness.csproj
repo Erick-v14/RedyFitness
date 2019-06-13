@@ -209,6 +209,7 @@
     <Content Include="Content\1200x630wa.png" />
     <Content Include="App_Code\glyphicons.png" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\Icons\add-group.png" />
     <Content Include="Content\Icons\dumbbell.png" />
     <Content Include="Content\Icons\enter %282%29.png" />
     <Content Include="Content\Icons\enter.png" />

@@ -75,8 +75,8 @@ namespace RedyFitness.Controllers
         {
             var email = System.Web.Security.Membership.GetUser(Email);
             ViewBag.message2 = "This email address is already registered";
-            
-            return Json(email == null);
+           
+         return Json(email == null);
         }
 
         public ActionResult Login()

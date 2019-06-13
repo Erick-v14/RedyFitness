@@ -9,8 +9,9 @@
 
         <img src="~/Content/RedyFitnessLogoHomePage.jpg" width="500" height="300" />
         <h3>  @Html.Label("", (string)ViewBag.msg, new { @class = "text-danger" }) </h3>
+        <h3>  @Html.Label("", (string)ViewBag.message, new { @class = "text-success" }) </h3>
 
-        <hr />
+ 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <div class="form-group">
